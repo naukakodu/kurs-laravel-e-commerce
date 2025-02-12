@@ -214,4 +214,15 @@ return [
 
     'partitioned' => env('SESSION_PARTITIONED_COOKIE', false),
 
+    'connections' => [
+        'user' => [
+            'driver' => 'database',
+            'table' => 'sessions',
+        ],
+
+        'admin' => [
+            'driver' => 'database',
+            'table' => 'administrators_sessions',
+        ],
+    ],
 ];
