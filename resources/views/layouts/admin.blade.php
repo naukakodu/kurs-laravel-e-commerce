@@ -17,6 +17,9 @@
 <body class="font-sans antialiased">
     <div class="h-screen overflow-hidden">
         <livewire:layout.admin.header />
+        <div class="p-4 container mx-auto">
+            {{ $slot }}
+        </div>
     </div>
 </body>
 </html>
