@@ -14,6 +14,6 @@ Z kursu możesz korzystać w taki sposób, jaki wyda Ci się najbardziej odpowie
 
 Kurs dzieli się na etapy, które pokazują postęp w budowie aplikacji. Każdy krok ku rozbudowie systemu e-commerce posiada opis i screen. Dzięki temu możesz uporządkować wiedzę i wypróbować wprowadzanie zmian u siebie.
 
-## Zgłaszania sugestii i opinii
+## Zgłaszanie sugestii i opinii
 
 Jeśli masz jakieś uwagi lub sugestie odnośnie do tego kursu, to zapraszam do udzielania się w komentarzach. Masz taką możliwość pod każdym wpisem, który jest etapem kursu. Pod każdym z nich widnieje sekcja komentowania.
