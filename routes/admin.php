@@ -8,4 +8,5 @@ Route::post('/admin/login', [App\Http\Controllers\Administrator\LoginController:
 
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Volt::route('dashboard', 'pages.admin.dashboard.index')->name('dashboard.index');
+    Volt::route('products', 'pages.admin.products.index')->name('products.index');
 });
