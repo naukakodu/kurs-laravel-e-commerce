@@ -21,6 +21,10 @@ class extends Component {
     <h2 class="text-2xl mb-6 mt-2">Lista produktów</h2>
     <div class="mb-4">
         {{ $products->links() }}
+
+        <a class="text-white bg-blue-700 inline-block rounded-md box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none" href="{{ route('admin.products.create') }}">
+            Utwórz nowy produkt
+        </a>
     </div>
     <div class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base border border-default">
         <table class="w-full text-sm text-left rtl:text-right text-body">

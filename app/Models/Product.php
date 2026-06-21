@@ -12,6 +12,8 @@ class Product extends Model
 
     protected $fillable = ['category_id', 'name', 'description', 'buy_price', 'discount_price', 'available_amount', 'is_visible'];
 
+    protected $casts = ['is_visible' => 'boolean'];
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);

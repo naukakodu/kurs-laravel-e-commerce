@@ -15,7 +15,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased">
-    <div class="h-screen overflow-hidden">
+    <div class="h-screen">
         <livewire:layout.admin.header />
         <div class="p-4 container mx-auto">
             {{ $slot }}
