@@ -10,4 +10,5 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Volt::route('dashboard', 'pages.admin.dashboard.index')->name('dashboard.index');
     Volt::route('products', 'pages.admin.products.index')->name('products.index');
     Volt::route('products/create', 'pages.admin.products.create')->name('products.create');
+    Volt::route('products/{product}/edit', 'pages.admin.products.edit')->name('products.edit');
 });

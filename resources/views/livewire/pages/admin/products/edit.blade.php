@@ -5,29 +5,41 @@ use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Collection;
 use Livewire\Attributes\Layout;
-use Livewire\Attributes\Validate;
 use Livewire\Volt\Component;
 
 new #[Layout('layouts.admin')]
 class extends Component {
     public Collection $categories;
     public ProductForm $productForm;
+    public Product $product;
 
-    public function mount(): void
+    public function mount(Product $product): void
     {
         $this->categories = Category::get()->pluck('name', 'id');
+        $this->product = $product;
+
+        $this->productForm->fill($this->product->only([
+            'category_id',
+            'name',
+            'description',
+            'buy_price',
+            'discount_price',
+            'available_amount',
+            'is_visible',
+        ]));
     }
 
     public function save()
     {
         $this->validate();
-        Product::create($this->productForm->all());
+        $this->product->update($this->productForm->all());
+
         return $this->redirect(route('admin.products.index'));
     }
 }; ?>
 
 <div>
-    <h2 class="text-2xl mb-6 mt-2">Utwórz nowy produkt</h2>
+    <h2 class="text-2xl mb-6 mt-2">Edytuj produkt</h2>
     <div class="relative overflow-x-auto bg-neutral-primary-soft shadow-xs rounded-base">
         <div class="rounded-2xl border border-gray-200 bg-white">
             <div class="space-y-6 border-gray-100 p-5 sm:p-6">
@@ -35,7 +47,7 @@ class extends Component {
                     <div class="-mx-2.5 flex flex-wrap gap-y-5">
                         <div class="w-full px-2.5">
                             <h4 class="border-b border-gray-200 pb-4 text-base font-medium text-gray-800">
-                                Dane nowego produktu
+                                Dane produktu
                             </h4>
                         </div>
 
@@ -144,10 +156,10 @@ class extends Component {
                                     Zapisz zmiany
                                 </button>
 
-                                <button
-                                    class="flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-800">
+                                <a href="{{ route('admin.products.index') }}"
+                                   class="flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-800">
                                     Anuluj
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -51,6 +51,9 @@ class extends Component {
                 <th scope="col" class="px-6 py-3 font-medium">
                     Utworzono
                 </th>
+                <th scope="col" class="px-6 py-3 font-medium">
+                    Akcje
+                </th>
             </tr>
             </thead>
             <tbody>
@@ -77,10 +80,15 @@ class extends Component {
                     <td class="px-6 py-4">
                         {{ $product->created_at->format('d.m.y H:i:s') }}
                     </td>
+                    <td class="px-6 py-4">
+                        <a href="{{ route('admin.products.edit', $product) }}" class="text-blue-700 hover:underline">
+                            Edytuj
+                        </a>
+                    </td>
                 </tr>
             @empty
                 <tr class="bg-neutral-primary border-b border-default">
-                    <td colspan="7" class="text-center py-4">Brak produktów</td>
+                    <td colspan="8" class="text-center py-4">Brak produktów</td>
                 </tr>
             @endforelse
             </tbody>
